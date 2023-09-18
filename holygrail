@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holy Grail Layout</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Explanation: The header is positioned relatively to its normal position in the flow, so we can use top, right, bottom, or left to displace it. In this case, we've kept it at its original position. */
+        
+        .main-content {
+            flex: 1;
+            display: flex;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #eee;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+        }
+
+        /* Explanation: The sidebar is positioned as sticky to stay at the top of the container. The 'top' property is set to 0, so it sticks to the top of the viewport when scrolling. */
+        
+        .content {
+            flex: 1;
+            background-color: #f7f7f7;
+            padding: 10px;
+            position: relative;
+            left: 10px;
+        }
+
+        /* Explanation: The content area is positioned relatively, and we've used 'left' to displace it 10 pixels from its normal position to the right. */
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Explanation: The footer is positioned absolutely at the bottom of the container, using 'bottom: 0' to ensure it stays at the bottom. 'width: 100%' makes it span the entire width. */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Header</h1>
+            <p>The header is positioned relatively to its normal position in the flow, allowing us to use properties like 'top', 'right', 'bottom', or 'left' to displace it. In this case, no displacement has been applied.</p>
+        </header>
+        <div class="main-content">
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <p>This is the sidebar content.</p>
+                <p>The sidebar is positioned as 'sticky' using 'position: sticky;' and 'top: 0;' to keep it at the top of the container when scrolling.</p>
+            </div>
+            <div class="content">
+                <h2>Main Content</h2>
+                <p>This is the main content area.</p>
+                <p>The content area is positioned relatively, and we've used 'left: 10px;' to displace it 10 pixels from its normal position to the right.</p>
+            </div>
+            <div class="sidebar">
+                <h2>Sidebar</h2>
+                <p>This is another sidebar.</p>
+            </div>
+        </div>
+        <footer>
+            <p>Footer</p>
+            <p>The footer is positioned absolutely at the bottom of the container using 'position: absolute;' and 'bottom: 0;' to ensure it stays at the bottom. 'width: 100%' makes it span the entire width of the container.</p>
+        </footer>
+    </div>
+</body>
+</html>
+
